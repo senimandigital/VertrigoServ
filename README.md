@@ -25,13 +25,14 @@ File ini akan dengan cepat mencapai kapasitas besar dengan ukuran bisa mencapai 
 2. Kita menulis kode program yang tidak sempurna, misal kita memakai sebuah variabel tanpa mendefinisikan-nya. Meskipun aplikasi tetap bisa berjalan dengan normal, tapi Apache akan melaporkan itu sebagai error dan menyimpan laporan-nya didalam file error.log ini dan laporan itu akan ditambahkan setiap kali request. Yang arti-nya website dengan satu user bisa menghasilkan file log mencapai ukuran 1 GB hanya dalam waktu satu bulan, bayangkan jika user website sudah menjacapai 1.000 atau bahkan 10.000 pengguna mungkin file log ini akan mencapai ukuran 1 GB hanya dalam beberapa jam saja. Jika VPS dengan harddisk berukuran 20GB maka butuh waktu kurang dari 1 hari untuk membuat server sepenuh-nya Down.
 
 ### Tabu dalam pemrograman
-1. Menggunakan variabel Non Global: Dalam pemrogramman sangat dianjurkan menggunakan variabel Global yang sudah tersedia seperti:
+#### 1. Menggunakan variabel Non Global
+Dalam pemrogramman sangat dianjurkan menggunakan variabel Global yang sudah tersedia seperti:
 ```
 $_ENV, $_GET, $_POST, $_SERVER, $_SESSION
 ```
   Tujuannya tentu saja untuk menghindari Apache dalam membengkak-kan ukuran file logs.
 
-2. Memutar-mutar nilai variabel, contoh:
+#### 2. Memutar-mutar nilai variabel, contoh:
 ```
 $title   = $_POST['title'];
 $content = $_POST['content'];
